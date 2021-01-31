@@ -1,32 +1,32 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="bg-gray-900 h-screen">
+    <headline></headline>
+    <navigation></navigation>
+
+    <div class="px-12 bg-gray-800 mx-24">
+      <div class="mx-auto pt-6 ">
+        <transition
+        mode="out-in"
+        enter-active-class="animate__animated animate__fadeInLeft! "
+        leave-active-class="animate__animated animate__fadeOut">
+          <router-view/>
+
+        </transition>
+      </div>
     </div>
-    <router-view/>
+
+
+
   </div>
 </template>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
 </style>
+<script>
+import Headline from "@/components/Headline";
+import Navigation from "@/components/navigation";
+export default {
+  components: {Navigation, Headline}
+}
+</script>
